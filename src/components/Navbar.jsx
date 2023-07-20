@@ -2,6 +2,8 @@
 import { Search } from '@mui/icons-material';
 import React from 'react';
 import styled from 'styled-components';
+import Badge from '@mui/material/Badge';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Container = styled.div`
     height: 60px;
@@ -51,7 +53,17 @@ const Logo = styled.h1`
 
 const Right = styled.div`
   flex: 1;
+  display: flex;
+  align-items:center;
+  justify-content: flex-end;
 `;
+
+const MenuItem = styled.div`
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 25px;
+`;
+
 
 const Navbar = () => {
   return (
@@ -61,13 +73,21 @@ const Navbar = () => {
               <Language>EN</Language>
               <SearchContainer>
                 <Input/>
-                <Search/>
+                <Search style={{color: "grey", fontSize: "16px"}}/>
               </SearchContainer>
             </Left>
             <Center>
               <Logo>LAMA.</Logo>
             </Center>
-            <Right>Right</Right>
+            <Right>
+              <MenuItem>Register</MenuItem>
+              <MenuItem>Sign in</MenuItem>
+              <MenuItem>
+                <Badge badgeContent={4} color="primary">
+                    <ShoppingCartOutlinedIcon/>
+                </Badge>
+              </MenuItem>
+            </Right>
         </Wrapper>
     </Container>
   )
