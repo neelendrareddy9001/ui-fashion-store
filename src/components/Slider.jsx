@@ -24,10 +24,11 @@ const Arrow = styled.div`
   top: 0;
   bottom: 0;
   margin: auto;
-  left : ${props => props.direction === "left" && "10px"};
-  right: ${props => props.direction === "right" && "10px"};
+  left : ${(props) => props.direction === "left" && "10px"};
+  right: ${(props) => props.direction === "right" && "10px"};
   cursor: pointer;
   opacity: 0.5;
+  z-index: 2;
 `;
 
 const Wrapper = styled.div`
@@ -79,9 +80,14 @@ const Button = styled.button`
 
 
 const Slider = () => {
+
+  const handleClick = (direction) => {
+
+  }
+
   return (
     <Container>
-        <Arrow direction="left" >
+        <Arrow direction="left" onClick={() => handleClick("left")} >
             <ArrowLeftOutlinedIcon/>
         </Arrow>
         <Wrapper>
@@ -116,7 +122,7 @@ const Slider = () => {
               </InfoContainer>
           </Slide>
         </Wrapper>
-        <Arrow direction="right" >
+        <Arrow direction="right"  onClick={() => handleClick("left")}>
             <ArrowRightOutlinedIcon/>
         </Arrow>
     </Container>
