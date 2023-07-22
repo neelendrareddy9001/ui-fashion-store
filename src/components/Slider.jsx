@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import {sliderItems} from '../data';
+import { mobile } from "../responsive";
 //Arrow Mui icons
 import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
@@ -11,10 +12,10 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({ display: "none" })}
 `;
 
 const Arrow = styled.div`
-  position: absolute;
   width: 50px;
   height: 50px;
   background-color: #fff7f7;
@@ -22,11 +23,12 @@ const Arrow = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
   top: 0;
   bottom: 0;
-  margin: auto;
-  left : ${(props) => props.direction === "left" && "10px"};
+  left: ${(props) => props.direction === "left" && "10px"};
   right: ${(props) => props.direction === "right" && "10px"};
+  margin: auto;
   cursor: pointer;
   opacity: 0.5;
   z-index: 2;
@@ -35,16 +37,16 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-
+  transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
-  display: flex;
-  align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #${props => props.bg};
+  display: flex;
+  align-items: center;
+  background-color: #${(props) => props.bg};
 `;
 
 const ImgContainer = styled.div`
@@ -54,7 +56,6 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   height: 80%;
-  flex: 1;
 `;
 
 const InfoContainer = styled.div`
@@ -69,16 +70,15 @@ const Title = styled.h1`
 const Desc = styled.p`
   margin: 50px 0px;
   font-size: 20px;
-  letter-spacing: 3px;
   font-weight: 500;
+  letter-spacing: 3px;
 `;
 
 const Button = styled.button`
   padding: 10px;
-  backgroung-color: transparent;
   font-size: 20px;
+  background-color: transparent;
   cursor: pointer;
-  border-radius: 25px;
 `;
 
 
