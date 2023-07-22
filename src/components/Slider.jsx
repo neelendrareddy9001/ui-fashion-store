@@ -94,26 +94,26 @@ const Slider = () => {
   };
   return (
     <Container>
-        <Arrow direction="left" onClick={() => handleClick("left")} >
-            <ArrowLeftOutlinedIcon/>
-        </Arrow>
-        <Wrapper slideIndex={slideIndex}>
-          {sliderItems.map((item) => (
-          <Slide bg={item.bg}>
-              <ImgContainer>
-                  <Image src={item.img} />
-              </ImgContainer>
-              <InfoContainer>
-                <Title>{item.title}</Title>
-                <Desc>{item.desc}</Desc>
-                <Button>SHOP NOW</Button>
-              </InfoContainer>
+      <Arrow direction="left" onClick={() => handleClick("left")}>
+        <ArrowLeftOutlinedIcon />
+      </Arrow>
+      <Wrapper slideIndex={slideIndex}>
+        {sliderItems.map((item) => (
+          <Slide bg={item.bg} key={item.id}>
+            <ImgContainer>
+              <Image src={item.img} />
+            </ImgContainer>
+            <InfoContainer>
+              <Title>{item.title}</Title>
+              <Desc>{item.desc}</Desc>
+              <Button>SHOW NOW</Button>
+            </InfoContainer>
           </Slide>
         ))}
-        </Wrapper>
-        <Arrow direction="right"  onClick={() => handleClick("right")}>
-            <ArrowRightOutlinedIcon/>
-        </Arrow>
+      </Wrapper>
+      <Arrow direction="right" onClick={() => handleClick("right")}>
+        <ArrowRightOutlinedIcon />
+      </Arrow>
     </Container>
   )
 }
