@@ -9,6 +9,7 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   position: relative;
+  overflow: hidden;
 `;
 
 const Arrow = styled.div`
@@ -38,10 +39,11 @@ const Slide = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background-color: #${props => props.bg};
 `;
 
 const ImgContainer = styled.div`
-  width: 100%;
+  height: 100%;
   flex: 1;
 `;
 
@@ -52,7 +54,29 @@ const Image = styled.img`
 
 const InfoContainer = styled.div`
   flex: 1;
+  padding: 50px;
 `;
+
+const Title = styled.h1`
+  font-size: 70px;
+`;
+
+const Desc = styled.p`
+  margin: 50px 0px;
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 500;
+`;
+
+const Button = styled.button`
+  padding: 10px;
+  backgroung-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 25px;
+`;
+
+
 
 const Slider = () => {
   return (
@@ -61,13 +85,35 @@ const Slider = () => {
             <ArrowLeftOutlinedIcon/>
         </Arrow>
         <Wrapper>
-          <Slide>
-          <ImgContainer>
+          <Slide bg="f5fafd">
               <ImgContainer>
                   <Image src='https://i.ibb.co/cXFnLLV/3.png' />
               </ImgContainer>
-              <InfoContainer></InfoContainer>
-          </ImgContainer>
+              <InfoContainer>
+                <Title>SUMMER SALE</Title>
+                <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF NEW ARRIAVALS.</Desc>
+                <Button>SHOP NOW</Button>
+              </InfoContainer>
+          </Slide>
+          <Slide bg="fcf1ed">
+              <ImgContainer>
+                  <Image src='https://i.ibb.co/cXFnLLV/3.png' />
+              </ImgContainer>
+              <InfoContainer>
+                <Title>WINTER SAL</Title>
+                <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF NEW ARRIAVALS.</Desc>
+                <Button>SHOP NOW</Button>
+              </InfoContainer>
+          </Slide>
+          <Slide bg="fbf0f4">
+              <ImgContainer>
+                  <Image src='https://i.ibb.co/cXFnLLV/3.png' />
+              </ImgContainer>
+              <InfoContainer>
+                <Title>POPULAR SALE</Title>
+                <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF NEW ARRIAVALS.</Desc>
+                <Button>SHOP NOW</Button>
+              </InfoContainer>
           </Slide>
         </Wrapper>
         <Arrow direction="right" >

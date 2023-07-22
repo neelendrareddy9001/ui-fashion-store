@@ -6,7 +6,7 @@ import Badge from '@mui/material/Badge';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Container = styled.div`
-    height: 60px;
+    height: 80px;
     background-color: white;
 
 `;
@@ -49,6 +49,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  cursor: pointer;
 `;
 
 const Right = styled.div`
@@ -56,6 +57,7 @@ const Right = styled.div`
   display: flex;
   align-items:center;
   justify-content: flex-end;
+  cursor: pointer;
 `;
 
 const MenuItem = styled.div`
