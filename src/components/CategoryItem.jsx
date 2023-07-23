@@ -41,7 +41,7 @@ const Button = styled.button`
 
   &:hover {
     transform: scale(1.2);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
   }
 
 `;
