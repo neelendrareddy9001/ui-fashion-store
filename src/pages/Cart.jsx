@@ -132,13 +132,25 @@ const SummaryItem = styled.div`
     margin : 30px 0px;
     display : flex;
     justify-content : space-between;
+    font-weight : ${(props) => props.type === "total" ? "500" : "unset"};
+    font-size : ${(props) => props.type === "total" ? "24px" : "unset"};
 `;
 
 const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
-const Button = styled.button``;
+const Button = styled.button`
+    width : 100%;
+    padding : 10px;
+    background-color : black;
+    color : white;
+
+    &:hover {
+      transform : scale(0.9);
+      transition : all 0.2s ease;
+    }
+`;
 
 const Cart = () => {
   return (
@@ -211,8 +223,8 @@ const Cart = () => {
                   <SummaryItemText>Shipping Discount</SummaryItemText>
                   <SummaryItemPrice>$ -5.90</SummaryItemPrice>
                 </SummaryItem>
-                <SummaryItem>
-                  <SummaryItemText type="total">Total</SummaryItemText>
+                <SummaryItem type="total">
+                  <SummaryItemText >Total</SummaryItemText>
                   <SummaryItemPrice>$ 80</SummaryItemPrice>
                 </SummaryItem>
                 <Button>CHECKOUT NOW</Button>
