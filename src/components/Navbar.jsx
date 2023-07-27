@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Badge from '@mui/material/Badge';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
+
 const Container = styled.div`
     height: 80px;
     background-color: white;
